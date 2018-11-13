@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+
+  flask:
+    build: ./flask/
+    command: "python app.py"
+    ports:
+      - 8000:8000
+    volumes:
+      - $VOLUMES_FOLDER/flask/app:/usr/src/app/
+    networks:
+      - my_app-network
+
+networks:
+  my_app-network:    #Change the name from my_app to some relevant name
+
